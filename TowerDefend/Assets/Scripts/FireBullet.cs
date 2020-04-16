@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireBullet : MonoBehaviour
 {
-
+    [SerializeField] private ParticleSystem fireFx;
     [SerializeField] private GameObject bullet;
 
     // Update is called once per frame
@@ -18,6 +18,7 @@ public class FireBullet : MonoBehaviour
 
     void Fire()
     {
+        fireFx.Play();
         Instantiate(bullet, transform.position, transform.rotation);
     }
 }
