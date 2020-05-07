@@ -5,10 +5,11 @@ using UnityEngine;
 public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject enemy;
-    [SerializeField] private GameObject player;
     [SerializeField] private int enemyCount = 20;
     [SerializeField] [Range(10, 20)] private float radius = 10;
     [SerializeField] private float spawnTime = 2.5f;
+
+    private float timer;
 
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class SpawnEnemy : MonoBehaviour
 
     IEnumerator EnemyDrop()
     {
+        timer = spawnTime;
         for (int i = 0; i < enemyCount; i++)
         {
             float randAngle = Random.Range(0, 2*Mathf.PI);
@@ -31,7 +33,12 @@ public class SpawnEnemy : MonoBehaviour
 
             Instantiate(enemy, new Vector3(x, 1, z), Quaternion.identity);
 
-            yield return new WaitForSeconds(spawnTime - (i / 20));
+            if(timer > 1)
+            {
+                timer = timer - 0.1f;
+            }
+
+            yield return new WaitForSeconds(timer);
         }
 
         yield return new WaitForSeconds(10f);

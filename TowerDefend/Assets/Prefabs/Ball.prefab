@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 584654713304770555}
   - component: {fileID: 3535008361645832715}
   - component: {fileID: 2777552385126498687}
-  - component: {fileID: 807794623454994677}
   - component: {fileID: 1100464876}
+  - component: {fileID: 3032512501260606783}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -93,24 +93,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7172285
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &807794623454994677
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7660042238752399062}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 1.5
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &1100464876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +108,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireFx: {fileID: 180128, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
+--- !u!54 &3032512501260606783
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660042238752399062}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8336457455489808245
 GameObject:
   m_ObjectHideFlags: 0

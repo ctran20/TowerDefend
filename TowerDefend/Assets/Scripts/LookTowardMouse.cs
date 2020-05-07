@@ -12,7 +12,7 @@ public class LookTowardMouse : MonoBehaviour
         RotateToLook();
     }
 
-    void GetPoint()
+    public void GetPoint()
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -23,21 +23,13 @@ public class LookTowardMouse : MonoBehaviour
         }
     }
 
-    void RotateToLook()
+    public void RotateToLook()
     {
         if (Vector3.Distance(transform.position, position) > 5)
         {
             Quaternion rotation = transform.rotation;
-
-            // ensure that we are looking at the same plane as the character
-            //Vector3 p = position;
-            //p.y = transform.position.y;
-            //transform.LookAt(p);
-
             transform.LookAt(position);
-
-
-            transform.rotation = Quaternion.Slerp(rotation, transform.rotation, Time.deltaTime * 30);
+            transform.rotation = Quaternion.Slerp(rotation, transform.rotation, Time.deltaTime * 38);
         }
     }
 }

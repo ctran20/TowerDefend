@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 1387265577942161714}
   - component: {fileID: 1387265577942161715}
   m_Layer: 0
-  m_Name: Target Practice
-  m_TagString: Untagged
+  m_Name: Dummy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,5 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDist: 2
-  moveSpeed: 9
+  moveSpeed: 5
+  health: 1
   tagged: 0

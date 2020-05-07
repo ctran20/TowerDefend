@@ -2,8 +2,9 @@
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] int minDist = 2;
+    [SerializeField] int minDist = 3;
     [SerializeField] int moveSpeed = 10;
+    [SerializeField] int health = 1;
 
     GameObject player;
     public bool tagged;
@@ -11,7 +12,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         tagged = false;
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Center");
     }
 
     // Update is called once per frame
@@ -28,6 +29,21 @@ public class Enemy : MonoBehaviour
             {
                 tagged = true;
             }
+        }
+    }
+
+    public void Hit()
+    {
+        if(health > 1)
+        {
+            health--;
+            transform.position -= transform.forward;
+        }
+        else
+        {
+            gameObject.GetComponent<Rigidbody>().useGravity = false;
+            tagged = true;
+            Destroy(gameObject, 1f);
         }
     }
 }
