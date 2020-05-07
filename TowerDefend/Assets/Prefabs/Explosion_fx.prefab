@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 403952}
   - component: {fileID: 19860484}
   - component: {fileID: 19904564}
+  - component: {fileID: -2290657234425263238}
   m_Layer: 0
-  m_Name: FX_Fireworks_Yellow_Small
+  m_Name: Explosion_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4749,3 +4750,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-2290657234425263238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3eb6d71bb240f46bc0bc4a7ff0dbab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 1

@@ -11,6 +11,9 @@ public class BulletCollide : MonoBehaviour
         if (!collision.gameObject.CompareTag("Ground") && !collision.gameObject.CompareTag("Player"))
         {
             Instantiate(fireFx, transform.position, transform.rotation);
+            collision.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            collision.gameObject.GetComponent<Enemy>().tagged = true;
+            Destroy(collision.gameObject, 1f);
             Destroy(transform.parent.gameObject,0.01f);
         }
     }
