@@ -31,7 +31,7 @@ public class SpawnEnemy : MonoBehaviour
             Debug.Log("X: " + x);
             Debug.Log("Z: " + z);
 
-            Instantiate(enemy, new Vector3(x, 1, z), Quaternion.identity);
+            Instantiate(enemy, new Vector3(x, 1.5f, z), Quaternion.identity);
 
             if(timer > 1)
             {

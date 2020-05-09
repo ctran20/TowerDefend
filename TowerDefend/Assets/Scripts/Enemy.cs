@@ -7,10 +7,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] int health = 1;
 
     GameObject player;
-    public bool tagged;
+    bool tagged;
+    bool hit;
+    float scale;
 
     private void Start()
     {
+        scale = 1;
         tagged = false;
         player = GameObject.FindGameObjectWithTag("Center");
     }
@@ -30,6 +33,12 @@ public class Enemy : MonoBehaviour
                 tagged = true;
             }
         }
+
+        if (hit)
+        {
+            scale -= 0.005f;
+            gameObject.transform.localScale = new Vector3(scale, scale, scale);
+        }
     }
 
     public void Hit()
@@ -42,7 +51,9 @@ public class Enemy : MonoBehaviour
         else
         {
             gameObject.GetComponent<Rigidbody>().useGravity = false;
+            gameObject.GetComponent<BoxCollider>().enabled = false;
             tagged = true;
+            hit = true;
             Destroy(gameObject, 1f);
         }
     }
