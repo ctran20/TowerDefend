@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         if(health > 1)
         {
             health--;
-            transform.position -= transform.forward;
+            transform.position -= transform.forward*1.5f;
         }
         else
         {
